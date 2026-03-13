@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.db.init_db import init_db
-from app.api import auth
+from app.api import auth, houses, rooms
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -29,6 +29,8 @@ app.add_middleware(
 )
 
 app.include_router(auth.router, prefix="/api")
+app.include_router(houses.router, prefix="/api")
+app.include_router(rooms.router, prefix="/api")
 
 
 @app.get("/")
@@ -38,4 +40,5 @@ async def root():
 
 @app.get("/api/health")
 async def health():
+    """Проверка доступности API."""
     return {"status": "ok"}
