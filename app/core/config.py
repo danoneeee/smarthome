@@ -11,6 +11,16 @@ class Settings(BaseSettings):
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     refresh_token_expire_hours: int = 24
+    max_devices_per_user: int = 50
+    mqtt_host: str | None = None
+    mqtt_port: int = 1883
+    mqtt_username: str | None = None
+    mqtt_password: str | None = None
+    mqtt_topic_prefix: str = "smarthome"
+
+    @property
+    def mqtt_enabled(self) -> bool:
+        return bool(self.mqtt_host and self.mqtt_host.strip())
 
     class Config:
         env_file = ".env"

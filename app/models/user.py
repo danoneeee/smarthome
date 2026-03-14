@@ -18,6 +18,7 @@ class User(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     houses: Mapped[list["HouseUser"]] = relationship("HouseUser", back_populates="user")
+    devices: Mapped[list["Device"]] = relationship("Device", back_populates="user")
 
     def __repr__(self):
         return f"<User {self.email}>"
