@@ -32,6 +32,7 @@ class Device(Base):
     device_type: Mapped["DeviceType"] = relationship("DeviceType", back_populates="devices")
     room: Mapped["Room | None"] = relationship("Room", back_populates="devices")
     user: Mapped["User"] = relationship("User", back_populates="devices")
+    scenario_devices: Mapped[list["ScenarioDevice"]] = relationship("ScenarioDevice", back_populates="device")
 
     def __repr__(self):
         return f"<Device {self.name}>"

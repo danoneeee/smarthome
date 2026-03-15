@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import get_settings
 from app.core.mqtt import start_mqtt_subscribe, stop_mqtt_subscribe, consume_state_queue
 from app.db.init_db import init_db
-from app.api import auth, houses, rooms, devices
+from app.api import auth, houses, rooms, devices, scenarios
 
 _mqtt_consumer_task: asyncio.Task | None = None
 
@@ -49,6 +49,7 @@ app.include_router(auth.router, prefix="/api")
 app.include_router(houses.router, prefix="/api")
 app.include_router(rooms.router, prefix="/api")
 app.include_router(devices.router, prefix="/api")
+app.include_router(scenarios.router, prefix="/api")
 
 
 @app.get("/")
