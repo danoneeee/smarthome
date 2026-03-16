@@ -1,6 +1,6 @@
-# SmartHome Controller API (v5)
+# SmartHome Controller API (v6)
 
-FastAPI, SQLite, модели User, House, HouseUser, Room, DeviceType, Device, EventLog, Scenario, ScenarioDevice, сидер типов устройств.
+FastAPI, SQLite, модели User, House, HouseUser, Room, DeviceType, Device, EventLog, Scenario, ScenarioDevice, Notification, сидер типов устройств.
 
 Эндпоинты:
 - GET / — главная страница
@@ -17,6 +17,8 @@ FastAPI, SQLite, модели User, House, HouseUser, Room, DeviceType, Device, 
 - GET /api/devices/{id}/log — журнал устройства
 - GET/POST /api/scenarios, GET/PATCH/DELETE /api/scenarios/{id} — сценарии
 - POST /api/scenarios/{id}/run — запуск сценария
+- GET /api/notifications — уведомления
+- PATCH /api/notifications/{id}/read — отметка прочитано
 
 Запуск: python -m venv venv && source venv/bin/activate && pip install -r requirements.txt && ./run.sh
 

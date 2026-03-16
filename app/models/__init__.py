@@ -4,6 +4,7 @@ from app.models.room import Room
 from app.models.device import Device, DeviceType
 from app.models.event import EventLog
 from app.models.scenario import Scenario, ScenarioDevice
+from app.models.notification import Notification
 
 __all__ = [
     "User",
@@ -15,4 +16,5 @@ __all__ = [
     "EventLog",
     "Scenario",
     "ScenarioDevice",
+    "Notification",
 ]

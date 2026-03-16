@@ -20,6 +20,7 @@ class User(Base):
     houses: Mapped[list["HouseUser"]] = relationship("HouseUser", back_populates="user")
     devices: Mapped[list["Device"]] = relationship("Device", back_populates="user")
     scenarios: Mapped[list["Scenario"]] = relationship("Scenario", back_populates="user")
+    notifications: Mapped[list["Notification"]] = relationship("Notification", back_populates="user")
 
     def __repr__(self):
         return f"<User {self.email}>"
