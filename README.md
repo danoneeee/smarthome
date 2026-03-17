@@ -1,4 +1,4 @@
-# SmartHome Controller API (v7)
+# SmartHome Controller API (v8)
 
 FastAPI, SQLite, модели User, House, HouseUser, Room, DeviceType, Device, EventLog, Scenario, ScenarioDevice, Notification, сидер типов устройств.
 
@@ -21,6 +21,10 @@ FastAPI, SQLite, модели User, House, HouseUser, Room, DeviceType, Device, 
 - PATCH /api/notifications/{id}/read — отметка прочитано
 - GET /api/energy/summary — сводка энергопотребления
 
-Запуск: python -m venv venv && source venv/bin/activate && pip install -r requirements.txt && ./run.sh
+В папке mobile/ — Flutter-приложение (веб и Android/iOS).
+
+Запуск бэкенда: python -m venv venv && source venv/bin/activate && pip install -r requirements.txt && ./run.sh
+
+Клиент: cd mobile && flutter pub get && flutter run -d chrome
 
 Документация: http://127.0.0.1:8000/docs
