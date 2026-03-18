@@ -3,6 +3,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.db.init_db import init_db
+from app.api import auth, houses, rooms, devices, scenarios, notifications, energy
+
+_mqtt_consumer_task: asyncio.Task | None = None
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -26,6 +30,14 @@ app.add_middleware(
     allow_headers=["*"],
     expose_headers=["*"],
 )
+
+app.include_router(auth.router, prefix="/api")
+app.include_router(houses.router, prefix="/api")
+app.include_router(rooms.router, prefix="/api")
+app.include_router(devices.router, prefix="/api")
+app.include_router(scenarios.router, prefix="/api")
+app.include_router(notifications.router, prefix="/api")
+app.include_router(energy.router, prefix="/api")
 
 
 @app.get("/")

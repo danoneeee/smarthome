@@ -1,0 +1,2 @@
+/// Web (Chrome): backend на том же компе
+const String kApiBaseUrl = 'http://127.0.0.1:8000/api';
