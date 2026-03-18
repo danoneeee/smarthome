@@ -1,7 +1,7 @@
 import asyncio
 from sqlalchemy import select
 from app.db.session import engine, Base, AsyncSessionLocal
-from app.models import User, House, HouseUser, Room, Device, DeviceType, EventLog, Scenario, ScenarioDevice, Notification
+from app.models import User, House, HouseUser, Room, DeviceType
 
 DEVICE_TYPES = [
     {"name": "lamp", "category": "Освещение", "supported_commands": ["turn_on", "turn_off", "set_brightness"]},

@@ -1,6 +1,6 @@
 # SmartHome Controller API (v8)
 
-FastAPI, SQLite, модели User, House, HouseUser, Room, DeviceType, Device, EventLog, Scenario, ScenarioDevice, Notification, сидер типов устройств.
+FastAPI, SQLite, модели User/House/Room/DeviceType, эндпоинты `/` и `/api/health`, сидер типов устройств.
 
 Эндпоинты:
 - GET / — главная страница
