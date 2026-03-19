@@ -1,0 +1,18 @@
+{
+  "mqtt": {
+    "host": "127.0.0.1",
+    "port": 1883,
+    "topic_prefix": "smarthome",
+    "username": "",
+    "password": ""
+  },
+  "heartbeat_interval": 30,
+  "devices": [
+    {"user_id": 1, "device_id": 1, "type": "lamp",       "name": "Люстра"},
+    {"user_id": 1, "device_id": 2, "type": "outlet",     "name": "Розетка ТВ"},
+    {"user_id": 1, "device_id": 3, "type": "lamp",       "name": "Ночник"},
+    {"user_id": 1, "device_id": 4, "type": "thermostat", "name": "Обогреватель"},
+    {"user_id": 1, "device_id": 5, "type": "lamp",       "name": "Свет кухни"},
+    {"user_id": 1, "device_id": 6, "type": "outlet",     "name": "Розетка чайника"}
+  ]
+}
