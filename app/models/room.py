@@ -12,6 +12,7 @@ class Room(Base):
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     house: Mapped["House"] = relationship("House", back_populates="rooms")
+    devices: Mapped[list["Device"]] = relationship("Device", back_populates="room", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<Room {self.name}>"
