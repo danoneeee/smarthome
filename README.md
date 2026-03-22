@@ -1,6 +1,6 @@
-# SmartHome Controller API (v8)
+# SmartHome Controller API (v10)
 
-FastAPI, SQLite, модели User/House/Room/DeviceType, эндпоинты `/` и `/api/health`, сидер типов устройств.
+FastAPI, SQLite, модели User, House, HouseUser, Room, DeviceType, Device, EventLog, Scenario, ScenarioDevice, Notification, сидер типов устройств.
 
 Эндпоинты:
 - GET / — главная страница
@@ -21,10 +21,10 @@ FastAPI, SQLite, модели User/House/Room/DeviceType, эндпоинты `/`
 - PATCH /api/notifications/{id}/read — отметка прочитано
 - GET /api/energy/summary — сводка энергопотребления
 
-В папке mobile/ — Flutter-приложение (веб и Android/iOS).
+В папке mobile/ — Flutter-приложение. scripts/seed_demo.py — демо demo@smarthome.ru / demo123. В папке emulator/ — эмулятор устройств по MQTT.
 
 Запуск бэкенда: python -m venv venv && source venv/bin/activate && pip install -r requirements.txt && ./run.sh
 
-Клиент: cd mobile && flutter pub get && flutter run -d chrome
+Демо: python scripts/seed_demo.py. Клиент: cd mobile && flutter pub get && flutter run -d chrome. MQTT и эмулятор — см. emulator/README.md
 
 Документация: http://127.0.0.1:8000/docs
